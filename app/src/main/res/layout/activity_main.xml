@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_headline"
+        app:layout_constraintBottom_toTopOf="@+id/lav_main"
+        android:layout_marginTop="16dp"
+        android:text="Steps to follow during this CoronaVirus Quarantine!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_main"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="fight_coronavirus.json"
+        app:lottie_loop="false"
+        app:lottie_speed="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout_click"
+        app:layout_constraintTop_toBottomOf="@id/tv_headline" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_click"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lav_main">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_click_left"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            app:lottie_fileName="left_arrow.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_click_right"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="right_arrow.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
